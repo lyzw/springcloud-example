@@ -1,0 +1,18 @@
+server:
+  port: 9001
+spring:
+  profiles:
+    active: git
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/lyzw/config_resp.git
+          searchPaths: '{application}'
+          username: lyz_w@163.com
+          # 密码加密需要下载jce包：http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html
+          # 下载后覆盖\jre\lib\security下面的jar包
+          # curl localhost:8888/encrypt -d mysecret
+          password: '{cipher}8be10cabad633ed05dc345fb01eba8cd83fa55420ab09f20cabd7914aec1958b'
+          force-pull: true
+          clone-on-start: true

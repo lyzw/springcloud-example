@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: configSever
+encrypt:
+  key: hdnspace12334566
